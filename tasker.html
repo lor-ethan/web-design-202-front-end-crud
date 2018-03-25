@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Tasker</title>
+    <link rel="stylesheet" href="tasker_matic.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="tasker.js"></script>
+    <script src="tasker_matic.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <div id="login" class="on">
+      <h1>Login</h1><br>
+		<form style="width:50%">
+		  <input id="usernameInput" type="text" name="username" placeholder="Username" class="form-control" value="user">
+		  <input id="passwordInput" type="password" name="password" placeholder="Password" class="form-control" value="test">
+		  <input type="submit" value="Login" class="btn btn-primary pull-right" onclick="login(event)">
+		</form>
+    </div>
+
+    <div id="home" class="off">
+      <h1>Tasker <small><span class="pull-right btn btn-primary btn-sm" id="logout" onclick="logout()"></span></small></h1>
+      <div class="well well-sm">
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="descField">Description</label>
+            <input class="form-control" type="text" placeholder="Description" id="descField">
+          </div>
+
+          <div class="form-group">
+            <label for="cField">Color Code</label>
+            <input class="form-control" type="color" value="#7CFC00" id="cField"/>
+          </div>
+
+          <div class="form-group">
+            <label for="dField">Due Date</label>
+            <input class="form-control" type="date" id="dField"/>
+          </div>
+
+          <input class="form-control" type="button" value="+" id="addButton" onclick="addTask()"/>
+        </form>
+      </div>
+
+      <div class="well well-sm">
+        <form class="form-inline">
+          <input class="form-control" type="text" placeholder="search" id="searchField" style="width:25%" onkeyup="searchTextChange()"/>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="incompleteBox" onclick="incompleteChange()"/>Incomplete Only
+            </label>
+
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="overdueBox" onclick="overdueChange()"/>Over-due only
+            </label>
+          </div>
+        </form>
+      </div>
+
+      <table id="tasks" class="table table-striped">
+      </table>
+    </div>
+  </div>
+</body>
+</html>

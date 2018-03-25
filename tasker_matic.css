@@ -1,0 +1,40 @@
+/*
+Ethan Lor
+CS 202
+Homework 5
+December 2, 2017
+*/
+div.off {
+  display: none;
+}
+
+input#cField {
+  width: 7em;
+}
+
+input.colorCol {
+  width: 7em;
+}
+
+span[name=dueDate] {
+  display: inline-block;
+  height: 1.25em;
+  width: 1.25em;
+  border-radius: 50%;
+  background-color: red;
+  margin: .5em;
+  text-align: center;
+}
+
+span.current {
+  visibility: hidden;
+}
+
+span.btn {
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+tr:nth-child(even) {
+  background: lightgrey;
+}
